@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-app
+  name: public-app
   namespace: prod
   labels:
-    app: backend-app
+    app: public-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-app
+      app: public-app
   template:
     metadata:
       labels:
-        app: backend-app
+        app: public-app
     spec:
       containers:
-        - name: backend-app
+        - name: public-app
           image: hari1se/backend-app:v1.0.0
           ports:
             - containerPort: 8000
